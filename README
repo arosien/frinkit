@@ -1,4 +1,4 @@
-Fun functions for Frink (http://futureboy.us/frinkdocs):
+Extra functions for Frink http://futureboy.us/frinkdocs
 
 doubling_period[3.5 percent / year] -> years
 19.804205158855579999
