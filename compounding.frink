@@ -1,0 +1,23 @@
+// Compounding period estimation based on http://en.wikipedia.org/wiki/Rule_of_72
+//
+// Percent parameters are dimensionless, results are dimension-less.
+
+// Doubling period estimation using the Rule of 72.
+doubling_period_72[percent] := doubling_period[percent, 72]
+
+// Doubling period estimation using the Rule of 70.
+doubling_period_70[percent] := doubling_period[percent, 70]
+
+// Doubling period estimation using the Rule of 69.
+doubling_period_69[percent] := doubling_period[percent, 69]
+
+// Doubling period estimation using the Eckart-McHale (E-M) rule
+doubling_period_em[percent] := doubling_period[percent, 100 ln[2]] * (600 + 4 percent) / (600 + percent)
+
+// Doubling period for periodic compounding.
+doubling_period_periodic[percent] := ln[2] / ln[1+percent]
+
+// Doubling period under continuous compounding.
+doubling_period_continuous[percent] := doubling_period[percent, 100 ln[2]]
+
+doubling_period[percent, basis] := basis / percent / 100
